@@ -1,0 +1,11 @@
+
+Adicionar o babel cli
+sudo yarn add @babel/cli
+
+Adicionar o preset-env
+
+Adicionar o arquivo .babelrc
+  {
+    "presets": ["@babel/preset-env"]
+  }
+  Preset env - faz a conversão de funcionalidades do ecma para o browser

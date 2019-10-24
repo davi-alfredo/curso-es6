@@ -14,7 +14,7 @@ var arr = [{
 /* Map => serve para percorrer o vetor e retornar algo de dentro */
 
 var newArr = arr.map(function (item) {
-  return item;
+  return item.id == '2';
 });
 console.log(newArr);
 /* Reduce => consome as informações do vetor tornando-a em uma única varíavel*/
@@ -23,18 +23,46 @@ var sum = arr.reduce(function (total, next) {
   return total + next;
 });
 console.log(sum);
-/*Filter => Deixa no filtro apenas  as condições */
+/*Filter => Deixa no Array apenas registros filtrados */
 
-var filter = arr.filter(function (item) {
-  return item % 2 === 0;
+var filter = arr.filter(function (p) {
+  return p.id == '1';
 });
 console.log(filter);
 /* Find => Pesquisar por algum elemento dentro do vetor */
 
 var find = arr.find(function (item) {
-  return item.id == 1;
+  return item.id == '2';
 });
 console.log(find);
+/* Find => Pesquisar por algum elemento dentro do vetor */
+
+var findIndex = arr.findIndex(function (item) {
+  return item.id == '3';
+});
+console.log(findIndex);
+/** Desestruturação de Objetos */
+
+var usuario = {
+  nome: 'David',
+  idade: 34,
+  endereco: {
+    cidade: 'São Paulo',
+    estado: 'SP'
+  }
+};
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome, idade, cidade);
+
+function mostraNome(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  console.log(nome, idade);
+}
+
+mostraNome(usuario);
 /*
 class List{
   constructor(){

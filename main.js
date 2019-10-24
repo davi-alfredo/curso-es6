@@ -8,32 +8,52 @@ const arr = [
 ];
 
 /* Map => serve para percorrer o vetor e retornar algo de dentro */
-const newArr = arr.map(function(item){
-  return item;
-});
-
+const newArr = arr.map(item => item.id == '2');
 console.log(newArr);
 
 /* Reduce => consome as informações do vetor tornando-a em uma única varíavel*/
 const sum = arr.reduce(function(total, next){
   return total+next;
 });
-
 console.log(sum);
 
-/*Filter => Deixa no filtro apenas  as condições */
-const filter = arr.filter(function(item){
-  return item % 2 === 0
-});
+/*Filter => Deixa no Array apenas registros filtrados */
+const filter = arr.filter(p => p.id == '1');
 console.log(filter);
 
 
 /* Find => Pesquisar por algum elemento dentro do vetor */
-const find = arr.find(function(item){
-  return item.id == 1;
-});
-
+const find = arr.find(item => item.id == '2');
 console.log(find);
+
+/* Find => Pesquisar por algum elemento dentro do vetor */
+const findIndex = arr.findIndex(item => item.id == '3');
+console.log(findIndex);
+
+/** Desestruturação de Objetos */
+
+const usuario = {
+  nome: 'David',
+  idade: 34,
+  endereco:{
+    cidade: 'São Paulo',
+    estado: 'SP'
+  }
+}
+
+const {nome, idade, endereco: {cidade}} = usuario;
+console.log(nome, idade, cidade); 
+
+function mostraNome({nome, idade}){
+  console.log(nome, idade);
+}
+
+mostraNome(usuario);
+
+
+
+
+
 
 
 
